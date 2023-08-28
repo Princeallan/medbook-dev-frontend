@@ -1,0 +1,39 @@
+<div class="widget-header">
+  <div class="flex justify-content-end">
+    <div>
+      <i class="icon-th-list"></i>
+      <h3>Patient Records</h3>
+    </div>
+    <div>
+
+      <button class="btn btn-primary float-end mb-2">Add New Record</button>
+    </div>
+  </div>
+</div> <!-- /widget-header -->
+
+<div class="widget-content">
+
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Gender</th>
+      <th>Type Of Service</th>
+      <th>General comments</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let record of this.patient_services">
+      <td>{{record.id}}</td>
+      <td>{{record.patient.name}}</td>
+      <td>{{record.patient.date_of_birth}}</td>
+      <td> {{record.patient.gender.name}}</td>
+      <td>{{record.service.name}} </td>
+      <td>{{record.comment}} </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div> <!-- /widget-content -->
