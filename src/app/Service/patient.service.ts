@@ -40,4 +40,8 @@ export class PatientService {
   getPatientServices() {
     return this.httpClient.get(`http://medbook-dev-backend.test/api/patient-services`)
   }
+
+  savePatient(patientData: object) {
+    return this.httpClient.post(`http://medbook-dev-backend.test/api/patients`, patientData)
+  }
 }

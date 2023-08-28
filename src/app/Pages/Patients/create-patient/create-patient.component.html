@@ -1,8 +1,38 @@
-<div class="row g-3">
-  <div class="col">
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-  </div>
-  <div class="col">
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-  </div>
-</div>
+<form class="row g-3" (ngSubmit)="savePatient()">
+    <div class="form-group col-md-4 offset-md-2">
+      <label for="fullName" class="control-label">Patient Name: <span class="text-danger">*</span></label>
+      <input id="fullName" [(ngModel)]="name" name="name" placeholder="Full Name" class="form-control" required type="text">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="dob" class="control-label">Date of Birth: <span class="text-danger">*</span></label>
+      <input id="dob" [(ngModel)]="date_of_birth" name="date_of_birth" class="form-control" required type="date">
+    </div>
+    <div class="form-group col-md-4 offset-md-2">
+      <label for="genderId" class="control-label">Gender : <span class="text-danger">*</span></label>
+      <select class="form-select" aria-label="DSelect Gender" id="genderId" [(ngModel)]="gender_id" name="gender_id">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="serviceId" class="control-label">Service: <span class="text-danger">*</span></label>
+      <select class="form-select" aria-label="Select Gender" id="serviceId" [(ngModel)]="service_id" name="service_id">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4 offset-md-2">
+      <label for="comment" class="control-label">Comment: <span class="text-danger">*</span></label>
+      <textarea id="comment" [(ngModel)]="comment" name="comment" class="form-control" required type="text"></textarea>
+    </div>
+    <div class="form-group col-md-8 offset-md-2">
+      <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+
+
